@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
     String[] companyList = new String[10];
     RecyclerView recyler;
+    Company company;
+    ArrayList<Company> companies = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,10 +109,32 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                     System.out.println(response);
+                        try {
+                            JSONArray companyObjectArray = new JSONArray(response);
+                            for(int i=0; i< companyObjectArray.length(); i++){
+                                JSONObject jo = companyObjectArray.getJSONObject(i);
+                                Company c = new Company();
+                                c.company_id = jo.getInt("id");
+                                c.company_name = jo.getString("name");
+                                c.company_package = jo.getString("package");
+                                c.profile = jo.getString("profile");
+                                c.info = jo.getString("info");
+                                c.url = jo.getString("url");
+                                c.logo = jo.getString("logo");
 
+                                companies.add(c);
+//                                System.out.println(c.toString());
 
+                            }
+                            recyler = findViewById(R.id.recycler);
+                            RecyclerviewAdapter recyclerviewAdapter = new RecyclerviewAdapter(MainActivity.this, companies);
+                            recyler.setAdapter(recyclerviewAdapter);
 
+                            recyler.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
 
                     }
@@ -127,11 +152,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        recyler = findViewById(R.id.recycler);
-        RecyclerviewAdapter recyclerviewAdapter = new RecyclerviewAdapter(this, companyList);
-        recyler.setAdapter(recyclerviewAdapter);
-
-        recyler.setLayoutManager(new LinearLayoutManager(this));
 
 
 

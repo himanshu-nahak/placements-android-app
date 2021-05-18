@@ -13,14 +13,14 @@ import java.util.ArrayList;
 
 public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapter.CompanyViewHolder> {
 
-    String[] companyList ;
+    ArrayList<Company> companyList ;
 
     Context context;
 
-    public RecyclerviewAdapter (Context ct , String[] cl){
+    public RecyclerviewAdapter (Context ct , ArrayList<Company> cl){
         companyList = cl;
         context = ct;
-
+        System.out.println("DEBUNG1"+ companyList.toString());
     }
 
     @NonNull
@@ -36,7 +36,9 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull RecyclerviewAdapter.CompanyViewHolder holder, int position) {
-        holder.companyName.setText(companyList[position]);
+//        holder.companyName.setText((CharSequence) companyList.get(position));
+        holder.companyName.setText(companyList.get(position).company_name);
+        holder.packageTextView.setText(companyList.get(position).company_package.substring(0,1) + " LPA");
 
 
     }
@@ -44,17 +46,18 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
     @Override
     public int getItemCount() {
 
-        return companyList.length;
+        return companyList.size();
     }
 
     public class CompanyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView companyName;
+        TextView companyName, packageTextView;
+
 
         public CompanyViewHolder(@NonNull @org.jetbrains.annotations.NotNull View itemView) {
             super(itemView);
             companyName = itemView.findViewById(R.id.companyName);
-
+            packageTextView = itemView.findViewById(R.id.packageTextView);
 
 
         }
