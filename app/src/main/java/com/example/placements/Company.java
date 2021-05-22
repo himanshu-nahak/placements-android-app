@@ -2,7 +2,39 @@ package com.example.placements;
 
 public class Company {
     int company_id;
-    String company_name, company_package, profile, info, url, logo;
+    String company_name, company_package, profile, description, offer,location, logo, url, cgpa;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getOffer() {
+        return offer;
+    }
+
+    public void setOffer(String offer) {
+        this.offer = offer;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getCgpa() {
+        return cgpa;
+    }
+
+    public void setCgpa(String cgpa) {
+        this.cgpa = cgpa;
+    }
 
     public int getCompany_id() {
         return company_id;
@@ -36,13 +68,6 @@ public class Company {
         this.profile = profile;
     }
 
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
 
     public String getUrl() {
         return url;
@@ -67,9 +92,12 @@ public class Company {
                 ", company_name='" + company_name + '\'' +
                 ", company_package='" + company_package + '\'' +
                 ", profile='" + profile + '\'' +
-                ", info='" + info + '\'' +
-                ", url='" + url + '\'' +
+                ", description='" + description + '\'' +
+                ", offer='" + offer + '\'' +
+                ", location='" + location + '\'' +
                 ", logo='" + logo + '\'' +
+                ", url='" + url + '\'' +
+                ", cgpa='" + cgpa + '\'' +
                 '}';
     }
 }

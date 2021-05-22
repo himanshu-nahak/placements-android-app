@@ -47,61 +47,8 @@ public class MainActivity extends AppCompatActivity {
         companyList[4] = "Deloitte";
 
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-        String url ="https://60a37c2c7c6e8b0017e270eb.mockapi.io/placements/api/Company";
-//         url = "https://jsonplaceholder.typicode.com/posts/1";
+        String url ="https://60a37c2c7c6e8b0017e270eb.mockapi.io/placements/api/company";
         System.out.println("URL HIT::::" + url);
-
-//        JsonObjectRequest request = new JsonObjectRequest(url,null, new Response.Listener<JSONObject>() {
-//            @Override
-//            public void onResponse(JSONObject response) {
-//                try {
-//                    System.out.println("DEBUNG:1");
-//                    System.out.println(response.toString());
-//                    ;
-//
-//                    //dreamart
-////                    JSONObject spritesObject = response.getJSONObject("sprites");
-////                    String front_default = spritesObject.getString("front_default");
-////                    JSONObject otherObject = spritesObject.getJSONObject("other");
-////                    JSONObject officialArtworkObject = otherObject.getJSONObject("official-artwork");
-////                    String officialArtworkFrontDefault = officialArtworkObject.getString("front_default");
-////                    Glide.with(ViewPokemon.this).load(officialArtworkFrontDefault).into(pDreamImage);
-//
-//
-////                    // GET POKEMON TYPES
-////                    JSONArray typesObjectArray = response.getJSONArray("types");
-////                    JSONObject slot1Object = typesObjectArray.getJSONObject(0);
-////                    JSONObject type1Object = slot1Object.getJSONObject("type");
-////                    pType1 = type1Object.getString("name");
-////                    System.out.println("1..."+pType1);
-////
-////                    if (typesObjectArray.length() >1 ){
-////                        JSONObject slot2Object = typesObjectArray.getJSONObject(1);
-////                        JSONObject type2Object = slot2Object.getJSONObject("type");
-////                        pType2 = type2Object.getString("name");
-////                        // TODO Set to TextView
-////                        pType.setText(pType1.toUpperCase()+ " | " + pType2.toUpperCase());
-////                    }
-////                    else
-////                        pType.setText(pType1.toUpperCase());
-//
-//
-//
-//                    // make it JSONException
-//                } catch (Exception e) {
-//
-//                    e.printStackTrace();
-//                }
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                System.out.println("DEBUNG:2");
-//                error.printStackTrace();
-//
-//                Toast.makeText(MainActivity.this,"Error Occured", Toast.LENGTH_SHORT).show();
-//            }
-//        });
 
         //Request a string response from the provided URL.
         StringRequest request = new StringRequest(Request.Method.GET, url,
@@ -116,11 +63,15 @@ public class MainActivity extends AppCompatActivity {
                                 Company c = new Company();
                                 c.company_id = jo.getInt("id");
                                 c.company_name = jo.getString("name");
-                                c.company_package = jo.getString("package");
                                 c.profile = jo.getString("profile");
-                                c.info = jo.getString("info");
-                                c.url = jo.getString("url");
+                                c.offer = jo.getString("offer");
+                                c.location = jo.getString("location");
+                                c.company_package = jo.getString("package");
+                                c.description = jo.getString("description");
+                                c.cgpa = jo.getString("cgpa");
                                 c.logo = jo.getString("logo");
+                                c.url = jo.getString("url");
+
 
                                 companies.add(c);
 //                                System.out.println(c.toString());

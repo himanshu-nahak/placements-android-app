@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Placements">
-        <activity android:name=".CompanyInfo"></activity>
+        <activity android:name=".CompanyInfo"
+            android:parentActivityName=".MainActivity"
+            android:label="Details"
+            ></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
