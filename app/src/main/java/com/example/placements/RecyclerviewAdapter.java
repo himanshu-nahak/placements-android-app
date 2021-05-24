@@ -2,6 +2,7 @@ package com.example.placements;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,16 +47,23 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         holder.companyCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, CompanyInfo.class);
+//                Intent intent = new Intent(context, CompanyInfo.class);
+                Intent intent = new Intent(context, ViewCompany.class);
+
                 intent.putExtra("name", companyList.get(position).company_name);
                 intent.putExtra("profile", companyList.get(position).profile);
                 intent.putExtra("package", companyList.get(position).company_package);
                 intent.putExtra("offer", companyList.get(position).offer);
                 intent.putExtra("location", companyList.get(position).location);
                 intent.putExtra("info", companyList.get(position).description);
+                intent.putExtra("url", companyList.get(position).url);
+                intent.putExtra("logo", companyList.get(position).logo);
+                intent.putExtra("cgpa", companyList.get(position).cgpa);
 
-
-
+//                System.out.println(">>>>>>>>>>>"+companyList.get(position).description);
+                Bundle bundle = new Bundle();
+                bundle.putString("description", companyList.get(position).description);
+                intent.putExtras(bundle);
                 context.startActivity(intent);
             }
         });

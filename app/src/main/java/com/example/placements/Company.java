@@ -2,10 +2,18 @@ package com.example.placements;
 
 public class Company {
     int company_id;
-    String company_name, company_package, profile, description, offer,location, logo, url, cgpa;
+    String company_name, company_package, profile, description, offer,location, logo, url, cgpa, info;
 
     public String getDescription() {
         return description;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 
     public void setDescription(String description) {

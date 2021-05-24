@@ -3,13 +3,17 @@ package com.example.placements;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 public class CompanyInfo extends AppCompatActivity {
 
     TextView ccName , tvProfile, tvPackage, tvOffer, tvLocation, tvInfo;
-    String cName, cProfile, cPackage, cOffer , cLocation, cInfo;
+    String cName, cProfile, cPackage, cOffer , cLocation, cInfo, cUrl, cLogo;
+    ImageView ivCompanyLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,7 @@ public class CompanyInfo extends AppCompatActivity {
         tvOffer = findViewById(R.id.tvOffer);
         tvLocation = findViewById(R.id.tvLocation);
         tvInfo = findViewById(R.id.tvInfo);
+        ivCompanyLogo = findViewById(R.id.ivCompanyLogo);
         getData();
         setData();
 
@@ -35,6 +40,9 @@ public class CompanyInfo extends AppCompatActivity {
             cOffer = getIntent().getStringExtra("offer");
             cLocation = getIntent().getStringExtra("location");
             cInfo = getIntent().getStringExtra("description");
+            cLogo = getIntent().getStringExtra("logo");
+
+
 
         }else{
             Toast.makeText(getApplicationContext(),"Couldn't fetch company details", Toast.LENGTH_SHORT).show();
@@ -48,7 +56,17 @@ public class CompanyInfo extends AppCompatActivity {
         tvOffer.setText(cOffer);
         tvLocation.setText(cLocation);
         tvInfo.setText(cInfo);
-        System.out.println(cInfo);
+        Glide.with(CompanyInfo.this).load(cLogo).into(ivCompanyLogo);
+        Bundle bundle = getIntent().getExtras();
+        String description = bundle.getString("description", "Default");
+        tvInfo.setText(description);
+
+        System.out.println("::::::::::"+description);
+//        tvInfo.setText("Lorem Ipsum");
+
+//        Toast.makeText(getApplicationContext(),cInfo,Toast.LENGTH_SHORT).show();
+
+//        System.out.println(cInfo);
 
     }
 
