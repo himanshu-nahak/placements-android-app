@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -42,7 +45,10 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull RecyclerviewAdapter.CompanyViewHolder holder, int position) {
 //        holder.companyName.setText((CharSequence) companyList.get(position));
         holder.companyName.setText(companyList.get(position).company_name);
-        holder.packageTextView.setText(companyList.get(position).company_package+ " LPA");
+        holder.profileTV.setText(companyList.get(position).profile);
+        holder.locationTV.setText(companyList.get(position).location);
+        Glide.with(context).load(companyList.get(position).logo).into(holder.companyLogoIV);
+
 
         holder.companyCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,18 +84,18 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
     public class CompanyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView companyName, packageTextView;
+        TextView companyName, profileTV, locationTV;
         LinearLayout companyCard;
-
+        ImageView companyLogoIV;
 
         public CompanyViewHolder(@NonNull @org.jetbrains.annotations.NotNull View itemView) {
             super(itemView);
             companyName = itemView.findViewById(R.id.companyName);
-            packageTextView = itemView.findViewById(R.id.packageTextView);
+            profileTV = itemView.findViewById(R.id.profileTV);
+            locationTV = itemView.findViewById(R.id.locationTV);
+
             companyCard = itemView.findViewById(R.id.companyCard);
-
-
-
+            companyLogoIV = itemView.findViewById(R.id.companyLogoIV);
         }
     }
 

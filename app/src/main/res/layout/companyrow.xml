@@ -1,44 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     android:orientation="vertical"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:padding="8dp"
-     android:background="@drawable/company_gradient"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@drawable/company_card"
     android:layout_margin="8dp"
     android:elevation="16dp"
     android:id="@+id/companyCard"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+
     >
     <TextView
         android:id="@+id/companyName"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Company Name"
-        android:textSize="36sp"
+        android:textSize="24sp"
         android:textFontWeight="600"
-        android:textColor="#330867"
+        android:textColor="#fff"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+
         />
-    <RelativeLayout
+    <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:orientation="horizontal"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/packageTextView"
-            android:textSize="16dp"
-            android:text="Package: X LPA"
-            android:layout_alignParentLeft="true"
-            android:textColor="#324989"
-
-            ></TextView>
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_alignParentRight="true"
-            android:id="@+id/companylogo"
-            ></ImageView>
+            android:id="@+id/companyLogoIV"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            >
 
-    </RelativeLayout>
+        </ImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_baseline_person_24"
+                    android:layout_marginRight="4dp"
+                    app:tint="#fff"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/profileTV"
+                    android:textSize="14dp"
+                    android:text="Profile"
+                    android:textColor="#f0f0f0"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+
+                    />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_baseline_location_on_24"
+                    android:layout_marginRight="4dp"
+                    app:tint="#fff"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/locationTV"
+                    android:textSize="14dp"
+                    android:text="Location"
+                    android:textColor="#f0f0f0"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="10dp"
+
+                    />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
 
 </LinearLayout>

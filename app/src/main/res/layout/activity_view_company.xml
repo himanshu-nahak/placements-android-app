@@ -52,7 +52,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Full Time Position"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textColor="#06D6A0"
 
                         android:layout_marginTop="10dp"/>
@@ -85,7 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="8dp">
+            android:padding="8dp"
+            android:layout_marginTop="15dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -101,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:text="Role Offered"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="12sp"
                     />
 
                 <TextView
@@ -109,8 +110,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Job Profile"
-                    android:textSize="22sp"
+                    android:textSize="18sp"
                     android:textFontWeight="600"
+                    android:layout_marginTop="10dp"
 
                     android:textColor="@color/white"
 
@@ -134,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:text="Location"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="12sp"
                    />
 
                 <TextView
@@ -142,9 +144,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bengaluru"
-                    android:textSize="22sp"
+                    android:textSize="18sp"
                     android:textFontWeight="600"
                     android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+
                     />
 <!--                    android:layout_marginTop="30dp"-->
 
@@ -174,7 +178,8 @@
                     android:layout_height="wrap_content"
                     android:text="Minimum CGPA"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="12sp"
+
                     />
 
                 <TextView
@@ -182,10 +187,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="CGPA"
-                    android:textSize="22sp"
+                    android:textSize="18sp"
                     android:textColor="@color/white"
 
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="10dp"
                     android:textFontWeight="600"
 
                     />
@@ -207,7 +212,7 @@
                     android:layout_height="wrap_content"
                     android:text="Package Offered"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="12sp"
                     android:textFontWeight="600"/>
 
                 <TextView
@@ -215,10 +220,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="LPA"
-                    android:textSize="22sp"
+                    android:textSize="18sp"
                     android:textFontWeight="600"
                     android:textColor="@color/white"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_marginTop="10dp"/>
             </LinearLayout>
 
 
@@ -234,8 +239,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Description"
-                    android:textSize="22sp"
+                    android:textSize="18sp"
                     android:textColor="@color/white"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
 
                     android:textFontWeight="600"/>
 
@@ -246,21 +253,25 @@
                     android:text="Enter Description"
                     android:textColor="@color/white"
                     android:layout_marginTop="10dp"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
                     />
 
 
             </LinearLayout>
         <Button
             android:id="@+id/btnLinkedIn"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Visit Website on LinkedIn"
             android:textColor="#fff"
-            android:layout_margin="4dp"
             android:elevation="10dp"
             android:textFontWeight="400"
-
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:shadowColor="@color/white"
+            android:layout_marginTop="20dp"
             />
 
     </LinearLayout>

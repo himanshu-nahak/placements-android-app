@@ -1,9 +1,13 @@
 package com.example.placements;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.graphics.fonts.FontFamily;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,11 +24,12 @@ public class ViewCompany extends AppCompatActivity {
     ImageView IVLogo;
     Button btnLinkedIn;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_company);
-        getSupportActionBar()56.setTitle("Placement Drive Details");
+        getSupportActionBar().setTitle("Placement Drive Details");
 
 
         TVcompanyName = findViewById(R.id.TVcompanyName);
